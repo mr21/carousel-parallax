@@ -15,7 +15,12 @@
 <!-- CSS.main -->
 <style type="text/css">
 body { font:12px sans-serif; margin:0; }
-#myCarousel { margin:125px auto 0 auto; width:800px; border-radius:4px; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+#global { margin:auto; width:800px; margin-top:40px; }
+h1 { font-size:4em; color:#ccc; margin:0; }
+h1 a { margin-left:10px; font-size:12px; }
+#myCarousel { margin-top:25px; width:100%; border-radius:4px; }
 #myCarousel img { position:absolute; }
 #myCarousel .tatooine h1 { position:absolute; left:50px; top:11px; font-size:42px; color:#fff; font-style:italic; }
 </style>
@@ -29,100 +34,100 @@ window.onload = function() {
 </head>
 <body>
 
-<div id="myCarousel" class="CarouselParallax">
+<div id="global">
+	<h1>CarouselParallax<a href="https://github.com/Mr21/CarouselParallax">GitHub</a></h1>
+	<div id="myCarousel" class="CarouselParallax">
 
-	<div class="pokemon CarouselParallax-slide" title="Pokemon battle">
-		<div class="CarouselParallax-layer">
-			<img src="img/pokemon-battle/bg.jpg"/>
+		<div class="pokemon CarouselParallax-slide" title="Pokemon battle">
+			<div class="CarouselParallax-layer">
+				<img src="img/pokemon-battle/bg.jpg"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:200">
+				<img src="img/pokemon-battle/grass.png" style="left:+57%; top:+47%;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:400">
+				<img src="img/pokemon-battle/pidgeotto.png" style="left:64%; top:4%;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:800">
+				<img src="img/pokemon-battle/bigGrass.png" style="left:-50px; bottom:-50px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:1500">
+				<img src="img/pokemon-battle/pikachu.png" style="left:40px; bottom:-50px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:3000">
+				<img src="img/pokemon-battle/pikachuHUD.png"   style="right:0; bottom:50px;"/>
+				<img src="img/pokemon-battle/pidgeottoHUD.png" style="left :0; top   :50px;"/>
+			</div>
 		</div>
-		<div class="CarouselParallax-layer" style="z-index:200">
-			<img src="img/pokemon-battle/grass.png" style="left:+57%; top:+47%;"/>
+
+		<div class="tatooine CarouselParallax-slide" title="Octobiwan at Tatooine">
+			<div class="CarouselParallax-layer">
+				<img src="img/github-404/bg.jpg"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:75">
+				<img src="img/github-404/house.png" style="right:3%; top:150px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:200">
+				<img src="img/github-404/bigHouse.png" style="right:15%; top:130px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:400">
+				<img src="img/github-404/shipShadow.png" style="left:20%; top:283px; margin-left:10px;"/>
+				<img src="img/github-404/ship.png"       style="left:20%; top:150px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:600">
+				<img src="img/github-404/octobiwanShadow.png" style="left:10%; top:326px; margin-left:10px;"/>
+				<img src="img/github-404/octobiwan.png"       style="left:10%; top:125px;"/>
+			</div>
 		</div>
-		<div class="CarouselParallax-layer" style="z-index:400">
-			<img src="img/pokemon-battle/pidgeotto.png" style="left:64%; top:4%;"/>
+
+		<div class="nemo CarouselParallax-slide" title="Finding Nemo">
+			<div class="CarouselParallax-layer">
+				<img src="img/nemo/bg.jpg"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:100">
+				<img src="img/nemo/bruce.png" style="left:81px; top:38px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:500">
+				<img src="img/nemo/squirt.png" style="left:195px; top:70px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:800">
+				<img src="img/nemo/algaC.png" style="left:-9px; bottom:19px;"/>
+				<img src="img/nemo/algaD.png" style="right:-29px; bottom:10px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:1100">
+				<img src="img/nemo/deb.png" style="left:90px; top:100px;"/>
+				<img src="img/nemo/dory.png" style="right:50px; top:155px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:1300">
+				<img src="img/nemo/nemo.png" style="left:50%;  top:170px; margin-left:-128px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:1500">
+				<img src="img/nemo/algaA.png" style="left:-25px; bottom:-50px;"/>
+				<img src="img/nemo/algaB.png" style="right:85px; bottom:-50px;"/>
+			</div>
 		</div>
-		<div class="CarouselParallax-layer" style="z-index:800">
-			<img src="img/pokemon-battle/bigGrass.png" style="left:-50px; bottom:-50px;"/>
+
+		<div class="walle CarouselParallax-slide" title="Eve &amp; Wall-E">
+			<div class="CarouselParallax-layer">
+				<img src="img/wall-e/bg.jpg"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:500">
+				<img src="img/wall-e/ground.png" style="left:-100px; bottom:-115px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:1200">
+				<img src="img/wall-e/walleShadow.png" style="left:25%; bottom:50px; margin-left:-151px;"/>
+				<img src="img/wall-e/walle.png"       style="left:25%; bottom:50px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:1700">
+				<img src="img/wall-e/eve.png" style="right:16%; bottom:80px;"/>
+			</div>
+			<div class="CarouselParallax-layer" style="z-index:2500">
+				<img src="img/wall-e/garbageLeft.png"  style="bottom:0;"/>
+				<img src="img/wall-e/garbageRight.png" style="bottom:0; right:0px;"/>
+			</div>
 		</div>
-		<div class="CarouselParallax-layer" style="z-index:1500">
-			<img src="img/pokemon-battle/pikachu.png" style="left:40px; bottom:-50px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:3000">
-			<img src="img/pokemon-battle/pikachuHUD.png"   style="right:0; bottom:50px;"/>
-			<img src="img/pokemon-battle/pidgeottoHUD.png" style="left :0; top   :50px;"/>
-		</div>
+
 	</div>
-
-	<div class="tatooine CarouselParallax-slide" title="Octobiwan at Tatooine">
-		<div class="CarouselParallax-layer">
-			<img src="img/github-404/bg.jpg"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:75">
-			<img src="img/github-404/house.png" style="right:3%; top:150px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:200">
-			<img src="img/github-404/bigHouse.png" style="right:15%; top:130px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:400">
-			<img src="img/github-404/shipShadow.png" style="left:20%; top:283px; margin-left:10px;"/>
-			<img src="img/github-404/ship.png"       style="left:20%; top:150px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:600">
-			<img src="img/github-404/octobiwanShadow.png" style="left:10%; top:326px; margin-left:10px;"/>
-			<img src="img/github-404/octobiwan.png"       style="left:10%; top:125px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:1000">
-			<h1>Octobiwan at Tatooine</h1>
-		</div>
-	</div>
-
-	<div class="nemo CarouselParallax-slide" title="Finding Nemo">
-		<div class="CarouselParallax-layer">
-			<img src="img/nemo/bg.jpg"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:100">
-			<img src="img/nemo/bruce.png" style="left:81px; top:38px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:500">
-			<img src="img/nemo/squirt.png" style="left:195px; top:70px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:800">
-			<img src="img/nemo/algaC.png" style="left:-9px; bottom:19px;"/>
-			<img src="img/nemo/algaD.png" style="right:-29px; bottom:10px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:1100">
-			<img src="img/nemo/deb.png" style="left:90px; top:100px;"/>
-			<img src="img/nemo/dory.png" style="right:50px; top:155px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:1300">
-			<img src="img/nemo/nemo.png" style="left:50%;  top:170px; margin-left:-128px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:1500">
-			<img src="img/nemo/algaA.png" style="left:-25px; bottom:-50px;"/>
-			<img src="img/nemo/algaB.png" style="right:85px; bottom:-50px;"/>
-		</div>
-	</div>
-
-	<div class="walle CarouselParallax-slide" title="Eve &amp; Wall-E">
-		<div class="CarouselParallax-layer">
-			<img src="img/wall-e/bg.jpg"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:500">
-			<img src="img/wall-e/ground.png" style="left:-100px; bottom:-115px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:1200">
-			<img src="img/wall-e/walleShadow.png" style="left:25%; bottom:50px; margin-left:-151px;"/>
-			<img src="img/wall-e/walle.png"       style="left:25%; bottom:50px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:1700">
-			<img src="img/wall-e/eve.png" style="right:16%; bottom:80px;"/>
-		</div>
-		<div class="CarouselParallax-layer" style="z-index:2500">
-			<img src="img/wall-e/garbageLeft.png"  style="bottom:0;"/>
-			<img src="img/wall-e/garbageRight.png" style="bottom:0; right:0px;"/>
-		</div>
-	</div>
-
 </div>
 
 </body>
