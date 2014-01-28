@@ -1,13 +1,17 @@
 function CarouselParallax(elem, duration) {
 	this.dom_container = elem;
-	this.duration = duration || 1000;
+	this.duration = duration || 1500;
 	this.movement = 'easeInOut';
 	// initialisation
 	this.parseSlides();
 	this.createMenu();
 	this.nodelist_links = this.dom_menu.getElementsByTagName('a');
 	this.slide(0);
-	this.timer = 1 * 1000 + this.duration;
+	this.play(3 * 1000 + this.duration);
+	// events
+	var self = this;
+	this.dom_container.onmouseover = function() { self.stop() };
+	this.dom_container.onmouseout  = function() { self.play() };
 }
 
 CarouselParallax.prototype = {
@@ -54,11 +58,13 @@ CarouselParallax.prototype = {
 			this.slideNumCurr = nb;
 		}
 	},
-	play: function() {
-		if (this.intervalId) {
+	play: function(timer) {
+		if (this.intervalId)
 			this.stop();
-			this.intervalId = window.clearInterval(function(){}, this.timer);
-		}
+		if (timer)
+			this.timer = timer;
+		var self = this;
+		this.intervalId = window.setInterval(function() { self.next() }, this.timer);
 	},
 	stop: function() { window.clearInterval(this.intervalId); this.intervalId = null; },
 	prev: function() { this.slide(this.slideNumCurr > 0                          ? this.slideNumCurr - 1 : this.dom_slides.length - 1, this.duration) },
