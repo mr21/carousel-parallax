@@ -1,25 +1,23 @@
-/* container */
-.CarouselParallax { position:relative; overflow:hidden; width:640px; height:400px; }
+/*
+	carouselParallax - 2.0
+	https://github.com/mr21/carousel-parallax
+*/
 
-/* slides */
-.CarouselParallax-slide { display:none; overflow:hidden; position:absolute; left:0; width:100%; height:100%; white-space:nowrap; }
-/* - les differentes couches pour le parallax (le parallax est calcule en fonction de leur differents z-index) */
-.CarouselParallax-layer { position:absolute; width:100%; height:100%; }
-
-/* le menu du bas */
-/* - conteneur */
-.CarouselParallax-menu            { position:absolute; z-index:999999; bottom:25px; width:100%; text-align:center; height:2px; }
-/* - boutons */
-.CarouselParallax-menu a          { display:inline-block; margin-top:-8px; width:10px; height:10px; border-radius:100%; background:rgba(255,255,255,0.50); }
-.CarouselParallax-menu a:hover    { background:rgba(255,255,255,0.75); }
-.CarouselParallax-menu a.selected { background:rgba(255,255,255,1.00); }
-.CarouselParallax-menu a + a      { margin-left:16px; }
-/* - infobulles */
-.CarouselParallax-menu a > span      { position:absolute; display:none; width:1000px; margin:-25px 0 0 -500px; height:16px; text-align:center; }
-.CarouselParallax-menu a > span span { padding:2px 5px; color:#ddd; border-radius:2px; border:0px solid #aaa; background:#333; }
-.CarouselParallax-menu a:hover > span { display:inline-block; }
-
-/* les fleches sur les cotes */
-a.CarouselParallax-arrow { position:absolute; z-index:999999; top:50%; border:10px solid transparent; margin-top:-10px; }
-div + a.CarouselParallax-arrow { border-right-color:#fff; }
-a.CarouselParallax-arrow + a.CarouselParallax-arrow { right:0; border-left-color:#fff; }
+.cp-carouselParallax {
+	position: relative;
+	font-size: 48px;
+	color: #fff;
+	}
+	.cp-carouselParallax,
+	.cp-slide {
+		overflow: hidden;
+		}
+	.cp-slide,
+	.cp-layer {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		}
+	.cp-slide ~ .cp-slide {
+		left: 100%;
+		}
