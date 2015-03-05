@@ -31,11 +31,34 @@ jQuery.fn.carouselParallax.obj.prototype = {
 			i += this.jq_slides.length;
 
 		if (i !== this.slideCurrId) {
-			this.isSliding = true;
 			var	that = this,
 				dir = this.slideCurrId < i,
 				jq_slideA = this.jq_slides.eq(i),
-				jq_slideB = this.jq_slides.eq(this.slideCurrId);
+				jq_slideB = this.jq_slides.eq(this.slideCurrId),
+				progress = function(_, p) {
+					var pA, pB;
+					if (dir) {
+						pA = 1 - p;
+						pB = -p;
+					} else {
+						pA = -1 + p;
+						pB = p;
+					}
+					jq_slideA[0].jq_layers.each(function() {
+						var layer = $(this);
+						layer.css("left", (layer.css("z-index") * pA) + "px");
+					});
+					jq_slideB[0].jq_layers.each(function() {
+						var layer = $(this);
+						layer.css("left", (layer.css("z-index") * pB) + "px");
+					});
+				};
+			if (this.isSliding) {
+				jq_slideA.finish();
+				jq_slideB.finish();
+				return;
+			}
+			this.isSliding = true;
 			jq_slideA
 				.css("left", dir ? "100%" : "-100%")
 				.animate({ left: "0%" }, this.dur, this.easing);
@@ -46,28 +69,11 @@ jQuery.fn.carouselParallax.obj.prototype = {
 					}, {
 						duration: this.dur,
 						easing: this.easing,
-						progress: function(_, p) {
-							var pA, pB;
-							if (dir) {
-								pA = 1 - p;
-								pB = -p;
-							} else {
-								pA = -1 + p;
-								pB = p;
-							}
-							jq_slideA[0].jq_layers.each(function() {
-								var layer = $(this);
-								layer.css("left", (layer.css("z-index") * pA) + "px");
-							});
-							jq_slideB[0].jq_layers.each(function() {
-								var layer = $(this);
-								layer.css("left", (layer.css("z-index") * pB) + "px");
-							});
-						},
+						progress: progress,
 						complete: function() {
+							progress(undefined, 1);
 							that.isSliding = false;
 							that.slideCurrId = i;
-							lg("animate: complete");
 						}
 					}
 				);
